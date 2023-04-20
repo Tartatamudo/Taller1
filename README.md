@@ -21,19 +21,17 @@ Salir
 -matrz 10x4
 entre 0 y 2
 
- 1ra Habitaciones
- numero de Habitacion
- 1-10
 
- 2da fila
+
+ 1 fila
  0 Disponible
  1 Ocupada
  2 reservada
 
- 3ra fila 
+ 2 fila 
  comida o sin comida
 
- 4to
+ 3 fila
  las noches
 
 -Boleta
