@@ -2,7 +2,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Hotel {
-    int habitaciones[][]= new int[10][3];
 
     public static int ValidarEntero(){
         Scanner teclado = new Scanner(System.in);
@@ -35,10 +34,6 @@ public class Hotel {
         }
     }
 
-    public static void main(String[] args) {
-        int habitaciones[][] = new int[10][3];
-        ImpMatriz(habitaciones);
-    }
     public static void MenuRellenarHabitacion(int habitaciones[][]){
         int num = Nhabitacion();
         int disponibilidad = DisponibilidadDeHabitacion(habitaciones, num);
@@ -72,13 +67,94 @@ public class Hotel {
 
     public static void RellComida(int[][] habitaciones, int num) {
         System.out.println("Desea comida");
-        System.out.println("[1]Si");
-        System.out.println("[2]No");
+        System.out.println("[0]Si");
+        System.out.println("[1]No");
         int opcion = ValidarEntero();
         habitaciones[num][1] = opcion;
     }
     public static int DisponibilidadDeHabitacion(int[][] habitaciones, int num){
         int disponibilidad = habitaciones[num][0];
         return disponibilidad;
+    }
+    public static int CostoDia(int[][] habitaciones, int num){
+
+        if (habitaciones[num][1] == 0){
+            return  40000;
+        }else if(habitaciones[num][1] == 1){
+            return  30000;
+        }
+        return 0;
+    }
+    public static void Boleta(int [][] habitaciones){
+        int num = Nhabitacion();
+        int costo = CostoDia(habitaciones, num);
+
+        int total =  costo *(habitaciones[num][2]);
+
+        System.out.println("Habitacion:" + num  );
+        System.out.println("Dias que estuvo:" + habitaciones[num][2]);
+        System.out.println("Paga:" + total);
+    }
+
+    public static void MenuResetaerTodo(int[][] habitaciones){
+        System.out.println("Ingrese contrseña");
+        int contraseña = ValidarEntero();
+        if(contraseña == 1234){
+            ResetearTodo(habitaciones);
+        }else{
+            System.out.println("Contraseña erronea");
+        }
+    }
+    public static void ResetearTodo(int[][] habitaciones){
+
+        for (int i = 0; i < habitaciones.length; i++) {
+            for (int j = 0; j < habitaciones[i].length; j++) {
+                habitaciones[i][j] = 0;
+            }
+        }
+    }
+    public static void MenuConsultarDisponibilidad(int[][] habitaciones){
+        int num = ValidarEntero();
+        if(habitaciones[num][0] == 0){
+            System.out.println("Esta dispobile");
+        } else if (habitaciones[num][0] == 1) {
+            System.out.println("Esta reservada");
+        }else{
+            System.out.println("Esta ocupada");
+        }
+    }
+    public static void menu() {
+        int habitaciones[][] = new int[10][3];
+
+        int eleccion = 1;
+
+        while (eleccion < 5 && eleccion > 0) {
+            System.out.println("ELiga lo que quiere hacer");
+            System.out.println("[1]Rellenar Habitacion");
+            System.out.println("[2]Consultar Estado de Habitacion");
+            System.out.println("[3]Boleta");
+            System.out.println("[4]Reiniciar hotel");
+            System.out.println("Si desea salir oprima cualquier otro numero");
+
+            eleccion = ValidarEntero();
+
+            switch (eleccion) {
+                case 1:
+                    MenuRellenarHabitacion(habitaciones);
+                    break;
+                case 2:
+                    MenuConsultarDisponibilidad(habitaciones);
+                    break;
+                case 3:
+                    Boleta(habitaciones);
+                    break;
+                case 4:
+                    MenuResetaerTodo(habitaciones);
+                    break;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        menu();
     }
 }
