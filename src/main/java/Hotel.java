@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class bsdfbasdf {
+public class Hotel {
 
     public static int ValidarEntero(){
         Scanner teclado = new Scanner(System.in);
