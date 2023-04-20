@@ -16,12 +16,16 @@ public class Hotel {
         }
         return num;
     }
-    public static int Nhabitacion(){
-        int num = 1;
+    public static int Nhabitacion() {
+        int num = 0;
+        while ((num < 1) || (num > 10)) {
             System.out.println("Habitacion a elegir");
             num = ValidarEntero();
-
-        return num -1;
+            if(num < 1 || num > 10){
+                System.out.println("Debe elegir entre las 10 habitaciones");
+            }
+        }
+        return num - 1;
     }
 
     public static void ImpMatriz(int habitaciones[][]){
