@@ -1,12 +1,45 @@
-Empezando
+primer metodo menu
+-MENU
+CONSULTAR ESTADO DE HABITACION
+boleta
+Reiniciar el hotel
+Salir
 
-En este programa se puede realizar gestion de habitaciones de un hotel.
+    MENU 
+    HAB1
+    HAB2
+    HAB3
+    HAB4
+    HAB5
+    HAB6
+    HAB7
+    HAB8
+    HAB9
+    HAB10
+    Volver al menu Principal
 
-Esto funcionará con una matriz de 10x4 la cual tiene 3 secciones:
-    
-    habitaciones
-    disponibilidad
-    comida o no
-    dias que se va a quedar
+-matrz 10x4
+entre 0 y 2
 
-Esto se realizará por el administrador del hotel, haciéndole una serie de preguntas a partir de un menu
+ Habitaciones
+numero de Habitacion
+1-10
+
+  fila
+ 0 Disponible
+ 1 Ocupada
+ 2 reservada
+
+  fila 
+ comida o sin comida
+
+ 4to
+ 3 las noches
+
+-Pedir Habitacion
+ validador de nuemro
+
+-Boleta
+
+-Reiniciar hotel
+con clave "1234"
