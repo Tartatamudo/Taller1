@@ -27,7 +27,7 @@ public class Hotel {
 
     public static void ImpMatriz(int habitaciones[][]){
         for (int i = 0; i < habitaciones.length; i++) {
-            System.out.print(i+1 + "; ");
+            System.out.print( i+1 + "; ");
             for (int j = 0; j < habitaciones[i].length; j++) {
                 System.out.print(habitaciones[i][j] + "; ");
             }
@@ -36,21 +36,49 @@ public class Hotel {
     }
 
     public static void main(String[] args) {
-        int habitaciones[][]= new int[10][3];
+        int habitaciones[][] = new int[10][3];
         ImpMatriz(habitaciones);
     }
-    public static void RellenarFila(int habitaciones[][]){
+    public static void MenuRellenarHabitacion(int habitaciones[][]){
         int num = Nhabitacion();
+        int disponibilidad = DisponibilidadDeHabitacion(habitaciones, num);
+        if (disponibilidad == 0){
+            RellenarHabitacion(habitaciones, num);
+        }else {
+            System.out.println("La habitacion esta ocupada o reservada");
+        }
+    }
+    public static void RellenarHabitacion(int habitaciones[][], int num){
         RellComida(habitaciones, num);
         RellDias(habitaciones, num);
         RellDisponibildad(habitaciones, num);
     }
 
-    private static void RellComida(int[][] habitaciones, int num) {
+    public static void RellDisponibildad(int[][] habitaciones, int num) {
+        System.out.println("Disponibildad");
+        System.out.println("[0]Disponible");
+        System.out.println("[1]Reservada");
+        System.out.println("[2]Ocupada");
+
+        int opcion = ValidarEntero();
+        habitaciones[num][0] =opcion;
+    }
+
+    public static void RellDias(int[][] habitaciones, int num) {
+        System.out.println("Numero de dias que se va a quedar la persona");
+        int dias = ValidarEntero();
+        habitaciones[num][2] = dias;
+    }
+
+    public static void RellComida(int[][] habitaciones, int num) {
         System.out.println("Desea comida");
         System.out.println("[1]Si");
         System.out.println("[2]No");
         int opcion = ValidarEntero();
-        habitaciones[num][2] = opcion;
+        habitaciones[num][1] = opcion;
+    }
+    public static int DisponibilidadDeHabitacion(int[][] habitaciones, int num){
+        int disponibilidad = habitaciones[num][0];
+        return disponibilidad;
     }
 }
