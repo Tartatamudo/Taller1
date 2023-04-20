@@ -8,13 +8,6 @@ class HotelTest {
 
     @BeforeEach
     void setUp() {
-        int habitaciones[][]= new int[10][3];
-        for (int i = 0; i < habitaciones.length; i++) {
-            for (int j = 0; j < habitaciones[i].length ; j++) {
-                habitaciones[i][j] =0;
-            }
-        }
-        habitaciones[1][1]= 1;
     }
 
     @AfterEach
@@ -28,6 +21,14 @@ class HotelTest {
 
     @Test
     void rellComida() {
+        int habitaciones[][]= new int[10][3];
+        for (int i = 0; i < habitaciones.length; i++) {
+            for (int j = 0; j < habitaciones[i].length ; j++) {
+                habitaciones[i][j] =0;
+            }
+        }
+        
+        habitaciones[1][1]= 1;
         int habitacione[][]= new int[10][3];
         for (int i = 0; i < habitacione.length; i++) {
             for (int j = 0; j < habitacione[i].length ; j++) {
