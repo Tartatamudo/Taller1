@@ -1,5 +1,3 @@
-Integrantes Fabian Mattus / Ignacio Valdebenito / Felipe Monsalves
-
 primer metodo menu
 -MENU
 CONSULTAR ESTADO DE HABITACION
@@ -20,27 +18,6 @@ Salir
     HAB10
     Volver al menu Principal
 
--matrz 10x3
-entre 0 y 2
-
-
-
- 1 fila
  0 Disponible
  1 Ocupada
  2 reservada
-
- 2 fila 
- comida o sin comida
-
- 3 fila
- las noches
-
--Boleta
- total a pagar 
- imprimir
-
--Reiniciar hotel
- con clave "1234"
- 
- 
