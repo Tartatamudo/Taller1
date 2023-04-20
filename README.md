@@ -20,7 +20,7 @@ Salir
     HAB10
     Volver al menu Principal
 
--matrz 10x4
+-matrz 10x3
 entre 0 y 2
 
 
