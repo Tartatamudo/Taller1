@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Hotel {
+public class bsdfbasdf {
 
     public static int ValidarEntero(){
         Scanner teclado = new Scanner(System.in);
@@ -95,7 +95,7 @@ public class Hotel {
 
         int total =  costo *(habitaciones[num][2]);
 
-        System.out.println("Habitacion:" + num  );
+        System.out.println("Habitacion:" + (num+1)  );
         System.out.println("Dias que estuvo:" + habitaciones[num][2]);
         System.out.println("Paga:" + total);
     }
@@ -127,6 +127,14 @@ public class Hotel {
             System.out.println("Esta ocupada");
         }
     }
+   public static void QuitarResOcup(int [][] habitaciones) {
+        int num = Nhabitacion();
+        habitaciones[num][0] = 0;
+        habitaciones[num][1] = 0;
+        habitaciones[num][2] = 0;
+
+    }
+
     public static void menu() {
         int habitaciones[][] = new int[10][3];
 
@@ -138,6 +146,7 @@ public class Hotel {
             System.out.println("[2]Consultar Estado de Habitacion");
             System.out.println("[3]Boleta");
             System.out.println("[4]Reiniciar hotel");
+            System.out.println("[5]Quitar reserva o ocupado");
             System.out.println("Si desea salir oprima cualquier otro numero");
 
             eleccion = ValidarEntero();
@@ -155,9 +164,12 @@ public class Hotel {
                 case 4:
                     MenuResetaerTodo(habitaciones);
                     break;
+                case 5:
+                    QuitarResOcup(habitaciones);
             }
         }
     }
+
     public static void main(String[] args) {
         menu();
     }
