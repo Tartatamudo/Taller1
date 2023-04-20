@@ -1,3 +1,5 @@
+Integrantes Fabian Mattus / Ignacio Valdebenito / Felipe Monsalves
+
 primer metodo menu
 -MENU
 CONSULTAR ESTADO DE HABITACION
